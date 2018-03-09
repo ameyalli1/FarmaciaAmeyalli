@@ -1,0 +1,89 @@
+﻿<Window x:Class="farma.Clientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:farma"
+        mc:Ignorable="d"
+        Title="productos" Height="332" Width="559">
+    <Window.Background>
+        <ImageBrush ImageSource="Imagenes/images.jpg"/>
+    </Window.Background>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label FontSize="25" HorizontalAlignment="Center" Grid.Row="0">Registro de clientes</Label>
+        <WrapPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="140" FontFamily="Arial" FontSize="16">Identificador *</Label>
+                <TextBox x:Name="txbIde" Width="180"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Width="140" FontFamily="Arial" FontSize="16">Nombre *</Label>
+                <TextBox x:Name="txbNombree" Width="180"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Width="140" FontFamily="Arial" FontSize="16">Direccion *</Label>
+                <TextBox x:Name="txbDireccion" Width="180"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Width="140" FontFamily="Arial" FontSize="16">RFC*</Label>
+                <TextBox x:Name="txbRfc" Width="180"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Width="140" FontFamily="Arial" FontSize="16">Telefono*</Label>
+                <TextBox x:Name="txbTelefono" Width="180"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Width="140" FontFamily="Arial" FontSize="16">Correo*</Label>
+                <TextBox x:Name="txbCorreo" Width="180"></TextBox>
+            </StackPanel>
+            <Label FontSize="16" FontFamily="Arial" FontStyle="Italic">* Campos obligatorios</Label>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2">
+            <Button Width="80" x:Name="btnNuevoo" Click="btnNuevoo_Click">
+                <StackPanel Orientation="Horizontal" >
+                    <Label>Nuevo</Label>
+                    <Image Width="16" Source="/Imagenes/add.png" ></Image>
+                </StackPanel>
+            </Button>
+            <Button Width="80" x:Name="btnGuardarr" Click="btnGuardarr_Click">
+                <StackPanel Orientation="Horizontal" >
+                    <Label>Guardar</Label>
+                    <Image Width="16" Source="/Imagenes/page_save.png" ></Image>
+                </StackPanel>
+            </Button>
+            <Button Width="80" x:Name="btnEditarr" Click="btnEditarr_Click">
+                <StackPanel Orientation="Horizontal" >
+                    <Label>Editar</Label>
+                    <Image Width="16" Source="/Imagenes/table_edit.png" ></Image>
+                </StackPanel>
+            </Button>
+            <Button Width="80" x:Name="btnCancelarr" Click="btnCancelarr_Click">
+                <StackPanel Orientation="Horizontal" >
+                    <Label>Cancelar</Label>
+                    <Image Width="16" Source="/Imagenes/Cancel.png" ></Image>
+                </StackPanel>
+            </Button>
+            <Button Width="80" x:Name="btnEliminarr" Click="btnEliminarr_Click">
+                <StackPanel Orientation="Horizontal" >
+                    <Label>Eliminar</Label>
+                    <Image Width="16" Source="/Imagenes/table_row_delete.png" ></Image>
+                </StackPanel>
+            </Button>
+            <Button Width="80" x:Name="btnRegresar" Click="btnRegresar_Click">
+                <StackPanel Orientation="Horizontal" >
+                    <Label>Regresar</Label>
+                    <Image Width="16" Source="/Imagenes/arrow_turn_left.png" ></Image>
+                </StackPanel>
+            </Button>
+        </WrapPanel>
+        <DataGrid x:Name="dtgTabla" IsReadOnly="True" Grid.Row="3"/>
+
+    </Grid>
+</Window>
